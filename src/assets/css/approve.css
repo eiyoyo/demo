@@ -1,0 +1,516 @@
+.listHeader {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 44px;
+  width: 100%;
+  z-index: 999;
+}
+
+.listHeader div:first-child {
+  float: left;
+  color: #999;
+  font-weight: normal;
+  font-size: 14px;
+  width: 78%;
+}
+
+.listHeader div:last-child {
+  float: right;
+}
+
+.listHeader input {
+  width: 42px;
+  height: 30px;
+  line-height: 35px;
+  font-size: 14px;
+  text-align: right;
+  outline: none;
+  border: 0;
+  background-color: #fff;
+}
+.listContent li {
+  height: 85px;
+  border-bottom: 4px solid #f4f4f4;
+  padding: 6px 15px;
+  background: #fff;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.listContent li div {
+  height: 33px;
+  width: 100%;
+}
+
+.listContent li div p {
+  margin: 0;
+  padding: 0;
+  height: 33px;
+  line-height: 33px;
+  width: 50%;
+  float: left;
+  color: #999;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.listContent li a {
+  color: #333;
+}
+
+.listContent li div:nth-child(1) span:nth-child(1) {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  width: 30%;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.listContent li div:nth-child(1) span:last-child {
+  float: right;
+  font-size: 12px;
+}
+
+.listContent li div:nth-child(1) p {
+  width: 100%;
+
+}
+
+.listContent li div:nth-child(1) .approveStatus {
+  margin-left: 10px;
+  font-size: 12px;
+  line-height: 32px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.listContent li div p:nth-child(2) {
+  text-align: right;
+  position: relative;
+}
+
+.totalHeader {
+  height: 40px;
+  padding: 0 10px;
+  background-color: #fff;
+  width: 100%;
+  margin: 15px 0 3px;
+
+}
+.totalHeader .listTotal{
+  line-height: 40px;
+  color: #FF6A00;
+  font-weight: bold;
+  font-size: 16px;
+  float: left;
+}
+.listContent li div:nth-child(2) div {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  height: 50px;
+  width: 50%;
+}
+
+.sum0 {
+  width: 100%;
+  height: 14px;
+  margin-top: 40px;
+  padding: 0 15px;
+}
+
+.sum0 div {
+  width: 28%;
+  float: left;
+  height: 8px;
+  border-bottom: 1px solid #bcbcbc;
+}
+
+.sum0 div:nth-child(2) {
+  border: 0;
+  width: 44%;
+  text-align: center;
+  font-size: 14px;
+  height: 14px;
+  line-height: 14px;
+  color: #bcbcbc;
+}
+.content .mint-tab-item-label{
+  font-size: 14px;
+}
+.content .mint-navbar .mint-tab-item{
+    padding: 0;
+    height:40px;
+
+}
+.mint-toast{
+  z-index: 2100;
+}
+.content .mint-tab-item-label span{
+    line-height:40px;
+}
+.mint-navbar .mint-tab-item.is-selected {
+  border-bottom: 3px solid #0076FF;
+  color: #0076FF;
+}
+/* tab切换 */
+.mint-navbar .mint-tab-item.is-selected{
+  margin-bottom:0;
+}
+.mint-tab-item-label span{
+  font-size: 16px;
+  font-weight: 600;
+}
+.mint-navbar .mint-tab-item{
+  padding:15px;
+  color: #999;
+}
+
+.mint-navbar .mint-tab-item.is-selected{
+  border: 0;
+  background: url("../img/tabBorder.png") no-repeat bottom center;
+  background-size:36px 3px;
+}
+
+/*详情*/
+
+.manHeader {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  background-color: #fff;
+  width: 100%;
+  /* margin-top:44px; */
+}
+
+.manHeader div {
+  color: #000;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.manHeader div:first-child {
+  float: left;
+}
+
+.manHeader div:last-child {
+  float: right;
+}
+
+.manHeader span {
+  color: #999;
+  font-size: 18px;
+  /* margin:-0.3rem 0.4rem 0 0; */
+}
+
+.content1 {
+  background: #fff;
+  padding: 8px 15px;
+  border-top: 1px solid #f4f4f4;
+}
+
+.content1 h4 {
+  padding: 10px 0;
+}
+
+.content1 h4 i {
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+.agentMsg h4 i {
+  margin-right: 8px;
+}
+
+.content1 ul li {
+  min-height: 32px;
+  line-height: 32px;
+  clear: both;
+}
+
+.content1 ul li em {
+  display: block;
+  width: 90px;
+  float: left;
+  color: #999;
+}
+
+.content1 ul li span {
+  color: #000;
+}
+
+.content1 ul li:nth-child(7) em {
+  height: 35px;
+}
+
+.content1 ul li:last-child em {
+  height: 35px;
+}
+
+.content1 ul li:last-child b {
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  margin: 5px;
+}
+
+.content1 ul li:last-child b img {
+  height: 100%;
+  width: 100%;
+}
+
+.qudao {
+  margin-top: 15px;
+}
+
+.qudaoTitle {
+  padding-left: 15px;
+  height: 36px;
+  line-height: 42px;
+  font-size: 12px;
+  color: #B0ACAC;
+  background: #efeff4;
+}
+
+.picTitle {
+  /* display: inline-block; */
+  float: left;
+  width: 90px;
+  color: #999;
+}
+
+.hkImg {
+  height: auto;
+  /* padding:10px; */
+  background: #fff;
+  width: 250px;
+  float: left;
+}
+
+.hkImg div {
+  height: 75px;
+  width: 44%;
+  margin: 5px;
+  /* background:#4681EB; */
+  display: inline-block;
+  /* padding:5px; */
+}
+
+.hkImg div img {
+  height: 100%;
+  width: 100%;
+}
+
+/* 审批按钮 */
+.bottom {
+  position: fixed;
+  bottom:0;
+  background: #fff;
+  width: 100%;
+  padding: 8px 20px;
+  display: flex;
+  box-shadow:0px -2px 6px 0px rgba(0,0,0,0.06);
+  z-index: 11;
+}
+
+.bottom div {
+  flex: 1;
+}
+
+.bottom button {
+  width: 100%;
+  border-radius:2px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  background: #2880FE;
+  color: #fff;
+  border: 0;
+  outline: 0;
+}
+.bottom div:first-child{
+  margin-right: 20px;
+
+}
+.bottom div:first-child button {
+  background:#DFECFF;
+  color: #0076FF;
+}
+
+.bottom div:last-child button {
+  color: #fff;
+}
+
+/* 审批操作弹出层 */
+
+.mint-popup-bottom {
+  width: 100%;
+  height: 100%;
+}
+
+.approvalModel {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.approvalModel h3 {
+  text-align: center;
+  height: 42px;
+  padding: 0 15px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.06);
+  font-size: 20px;
+  color: #333;
+  line-height: 42px;
+  position: relative;
+}
+
+.approvalModel h3 span {
+  display: block;
+  position: absolute;
+  left: 15px;
+  height: 42px;
+  width: 42px;
+  text-align: left;
+  font-size: 16px;
+  color: #0076FF;
+  font-weight: normal;
+}
+
+.approvalModel p {
+  padding: 20px 15px 10px;
+  color: #999;
+}
+
+.approvalModel p span {
+  float: right;
+}
+
+.approvalModel>div {
+  padding: 5px 15px;
+  height: 30%;
+}
+
+.approvalModel textarea {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #F4F3F4;
+}
+
+.approvalModel button {
+  width: 100%;
+  border-radius: 0;
+  margin: 15px 0;
+}
+
+
+
+/* 审批记录 */
+#record li{
+  /* height:72px; */
+  font-size: 14px;
+  color: #999;
+  margin-top: 10px;
+  margin-left: 20px;
+  /* list-style:disc; */
+  position: relative;
+  padding-bottom: 14px;
+}
+#record li h3{
+  line-height:18px;
+  font-size: 14px;
+}
+#record li:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  left: -21px;
+  top: 5px;
+}
+#record li:after {
+  content: "";
+  display: inline-block;
+  /* width: 2px; */
+  height: 100%;
+  border-style: dashed;
+  border-color: #ccc;
+  border-width: 1px;
+  position: absolute;
+  left: -17px;
+  top: 14px;
+}
+#record .spActive1:before{
+  background-color: #F48A18;
+}
+#record .spActive1:after{
+  border-color: #F48A18;
+}
+
+#record .spActive2:before{
+  background-color: #FF5555;
+}
+#record .spActive2:after{
+  border-color: #FF5555;
+}
+
+#record .spActive3:before{
+  background-color: #3FC8A3;
+}
+#record .spActive3:after{
+  border-color: #3FC8A3;
+}
+#record li:last-child::after {
+  display: none;
+}
+#record li div:nth-child(2){
+  min-height:20px;
+  line-height: 28px;
+  font-size: 12px;
+  text-align: left;
+}
+#record li div em{
+  height:18px;
+  width:auto;
+}
+#record li div:first-child span{
+  float:right;
+}
+#record li div:nth-child(3){
+  color: #9B9B9B;
+  padding:0 8px;
+  background:rgba(244,243,244,1);
+  border-radius:1px;
+  border:1px solid rgba(222,222,222,1);
+  line-height: 24px;
+  margin-top:10px;
+}
+#record li div:nth-child(3) span{
+  color: #9B9B9B;
+  border-radius: 2px;
+}
+
+
+.seeSaleInfo{
+  color: #0B79EB;
+  text-decoration: underline;
+  text-align: center;
+  /* line-height: 50px; */
+  padding: 20px 0;
+  font-size: 18px;
+  background: #fff;
+  margin-bottom: 20px;
+}

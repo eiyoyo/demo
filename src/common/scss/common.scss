@@ -1,0 +1,175 @@
+
+#app main{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow-y: scroll;
+}
+
+h1 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+ul {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.mint-header {
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+  height: 45px;
+}
+
+.black.mint-header {
+  background: #494C5B;
+  line-height: 44px;
+  .mint-header-title {
+    font-size: 17px;
+    font-weight: bold;
+    overflow: auto;
+  }
+  img{
+    vertical-align: middle;
+  }
+  &.fixed{
+    z-index: 5;
+  }
+}
+
+.white.mint-header {
+  background: #fff;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+  line-height: 44px;
+  .mint-header-title {
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+    overflow: auto;
+  }
+  img{
+    vertical-align: middle;
+  }
+  &.fixed{
+    z-index: 5;
+  }
+}
+
+.mint-header ~ main {
+  margin-top: 45px;
+}
+
+.section {
+  padding: 20px 0;
+  margin-bottom: 16px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+}
+
+#contract .mint-popup {
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  background: transparent;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+#contract .mint-popup {
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  background: transparent;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+// 清除浮动
+.clearfix {
+  *zoom:1;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+}
+
+// 单行文本溢出
+.elliptical {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+// 设置input框默认样式
+input {
+  box-sizing: border-box;
+}
+input::-webkit-input-placeholder{
+  color:#C3C3C3;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+  color:#C3C3C3;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+  color:#C3C3C3;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+  color:#C3C3C3;
+}
+// 标题栏区的图片按钮
+.btn-flag {
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+}
+.btn-search {
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+}
+// mint-header样式重置
+/deep/.m_header {
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  color: #000;
+  box-shadow: none;
+  z-index: 999 !important;
+  border-bottom: 1px solid #f3f3f3;
+  .mint-header-title {
+    font-size:17px;
+    font-weight:bold !important;
+    color:rgba(51,51,51,1);
+  }
+  .header_back {
+    padding-left: 10px;
+  }
+
+}
+
+// 没有数据时的友情其实
+.no-data {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  text-align: center;
+  color: #c3c3c3;
+}
