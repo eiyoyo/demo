@@ -155,16 +155,12 @@
       <div><span class="label">渠道公司:</span>{{khdata.ddDetails.companyName}}</div>
       <div><span class="label">经纪人:</span>{{khdata.ddDetails.memberName}}</div>
     </div>
-    <popSwiper :img="img" :index="index + 1" :popupVisible.sync="popupVisible"></popSwiper>
   </div>
 </template>
 <!--案场经理  佣金金额和应发佣金字段→前端计算-->
 <script>
-import popSwiper from './popSwiper'
-
 export default {
   name: 'dading',
-  components: { popSwiper },
   data () {
     return {
       id: this.$route.params.id,
@@ -207,11 +203,6 @@ export default {
           this.khdata = res.data.data
         }
       })
-    },
-    show (item, index) {
-      this.img = item
-      this.index = index
-      this.popupVisible = true
     },
     imgClick (index, imgArr) {
       var images = []

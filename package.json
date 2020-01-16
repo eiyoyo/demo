@@ -16,7 +16,6 @@
     "v-charts": "^1.19.0",
     "vant": "^2.4.2-beta.2",
     "vue": "^2.6.10",
-    "vue-awesome-swiper": "^3.1.3",
     "vue-router": "^3.1.3"
   },
   "devDependencies": {
@@ -29,10 +28,12 @@
     "compression-webpack-plugin": "^3.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "image-webpack-loader": "^6.0.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack-bundle-analyzer": "^3.6.0"
   },
   "eslintConfig": {
     "root": true,

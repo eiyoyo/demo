@@ -44,16 +44,13 @@
         <div>{{khdata.companyName}}</div>
         <img src="../../../assets/img/icon_call.png" @click="phone(khdata.agentPhone)" height="30px" width="30px">
       </div>
-      <popSwiper :img="img" :index="index + 1" :popupVisible.sync="popupVisible"></popSwiper>
     </main>
   </div>
 </template>
 
 <script>
-import popSwiper from './../../../components/popSwiper'
 export default {
   name: 'laifang-detail',
-  components: { popSwiper },
   data () {
     return {
       id: this.$route.params.id,
@@ -92,24 +89,12 @@ export default {
         this.$router.back()
       }
     },
-
     getBaobei () {
       this.$axios.get(this.acApi + '/visit/v1/' + this.id).then((res) => {
         if (res.data.status === 'success') {
           this.khdata = res.data.data
         }
       })
-    },
-    show (item, index) {
-      var a = []
-      for (let i = 0; i < item.length; i++) {
-        a[i] = {
-          'url': item[i]
-        }
-      }
-      this.img = a
-      this.index = index
-      this.popupVisible = true
     },
     imgClick (index, imgArr) {
       var images = []

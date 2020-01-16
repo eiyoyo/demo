@@ -89,15 +89,13 @@
       </div>
 
     </div>
-    <popSwiper :img="img" :index="index + 1" :popupVisible.sync="popupVisible"></popSwiper>
   </div>
 </template>
 <script>
 import Icon from '@/components/icon.vue'
-import popSwiper from './popSwiper'
 export default {
   name: 'lookAward',
-  components: { Icon, popSwiper },
+  components: { Icon },
   data () {
     return {
       visitId: this.$route.params.id,
@@ -212,7 +210,7 @@ export default {
   }
 }
 </script>
-  <style lang="scss">
+<style lang="scss">
   em{
     font-style: normal;
   }

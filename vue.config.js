@@ -1,10 +1,22 @@
 const CompressionPlugin = require('compression-webpack-plugin') // Gzip
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const IS_PROD = process.env.NODE_ENV === 'production' // 是否为生产环境
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin') // 对js文件进行压缩
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin // 打包分析
+const isProduction = process.env.NODE_ENV === 'production' // 是否为生产环境
+// const IS_ANALYZ = 'analyz' // 打开打包分析
+const IS_ANALYZ = '' // 关闭打包分析，正式上线时请关闭！不然会增加打包体积。
+// 生产环境使用CDN引入vant
+const cdn = {
+  css: [
+    'https://cdn.jsdelivr.net/npm/vant@2.4/lib/index.css'
+  ],
+  js: [
+    'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js',
+    'https://cdn.jsdelivr.net/npm/vant@2.4/lib/vant.min.js'
+  ]
+}
 
 module.exports = {
   // 基本路径
-  // baseUrl: './',//vue-cli3.3以下版本使用
   publicPath: './', // vue-cli3.3+新版本使用
   // 输出文件目录
   outputDir: 'dist',
@@ -19,29 +31,51 @@ module.exports = {
   // 生产环境是否生成 sourceMap 文件，一般情况不建议打开
   productionSourceMap: false,
   // 对内部的 webpack 配置进行更细粒度的修改 https://github.com/neutrinojs/webpack-chain see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
-  chainWebpack: config => {
-    /**
-     * 删除懒加载模块的prefetch，降低带宽压力
-     * https://cli.vuejs.org/zh/guide/html-and-static-assets.html#prefetch
-     * 而且预渲染时生成的prefetch标签是modern版本的，低版本浏览器是不需要的
-     */
+  chainWebpack: (config) => {
     // 生产环境配置
-    if (IS_PROD) {
-      // 移除 prefetch 插件
-      config.plugins.delete('prefetch')
-      // 移除 preload 插件
-      config.plugins.delete('preload')
-      // 压缩代码
-      config.optimization.minimize(true)
-      // 分割代码
-      config.optimization.splitChunks({
-        chunks: 'all'
+    if (isProduction) {
+      let entryNames = ['index', 'customer', 'yeji']
+      entryNames.forEach(entryName => {
+        // 移除 prefetch 插件
+        config.plugins.delete(`prefetch-${entryName}`)
+        // 移除 preload 插件
+        config.plugins.delete(`preload-${entryName}`)
+        // 生产环境注入cdn
+        config.plugin(`html-${entryName}`)
+          .tap(args => {
+            args[0].cdn = cdn
+            args[0].xhtml = true
+            args[0].minify = {
+              removeAttributeQuotes: false,
+              keepClosingSlash: true,
+              collapseWhitespace: true,
+              preserveLineBreaks: true
+              // more options:
+              // https://github.com/kangax/html-minifier#options-quick-reference
+            }
+            return args
+          })
       })
+      // 打包分析
+      if (IS_ANALYZ) {
+        config.plugin('webpack-report')
+          .use(BundleAnalyzerPlugin, [{
+            analyzerMode: 'static'
+          }])
+      }
+      // ============压缩图片 start============
+      config.module
+        .rule('images')
+        .use('image-webpack-loader')
+        .loader('image-webpack-loader')
+        .options({ bypassOnDebug: true })
+        .end()
+      // ============压缩图片 end============
     }
   },
   // 调整 webpack 配置 https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F
   configureWebpack: config => {
-    if (IS_PROD) {
+    if (isProduction) {
       // 为生产环境配置
       config.plugins.push(
         // 开启Gzip
@@ -66,11 +100,16 @@ module.exports = {
           parallel: true
         })
       )
+      // 生产环境用cdn方式引入插件
+      config.externals = {
+        vue: 'Vue',
+        vant: 'vant'
+      }
     }
   },
   css: {
     // 是否使用css分离插件
-    extract: IS_PROD, // 是否使用 css 分离插件，默认生产环境下是 true，开发环境下是 false
+    extract: isProduction, // 是否使用 css 分离插件，默认生产环境下是 true，开发环境下是 false
     // 开启 CSS source maps，一般不建议开启
     sourceMap: process.env.NODE_ENV !== 'production',
     loaderOptions: {
@@ -87,21 +126,18 @@ module.exports = {
       entry: 'src/pages/index/index.js',
       template: 'public/index.html',
       filename: 'index.html',
-      title: 'Index Page',
       chunks: ['chunk-vendors', 'chunk-common', 'index']
     },
     customer: {
       entry: 'src/pages/customer/customer.js',
       template: 'public/index.html',
       filename: 'customer.html',
-      title: 'Customer Page',
       chunks: ['chunk-vendors', 'chunk-common', 'customer']
     },
     yeji: {
       entry: 'src/pages/yeji/yeji.js',
       template: 'public/index.html',
       filename: 'yeji.html',
-      title: 'Yeji Page',
       chunks: ['chunk-vendors', 'chunk-common', 'yeji']
     }
   },

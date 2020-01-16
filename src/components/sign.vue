@@ -173,13 +173,10 @@
       <div><span class="label">渠道公司:</span>{{khdata.companyName}}</div>
       <div><span class="label">经纪人:</span>{{khdata.memberName}}</div>
     </div>
-    <popSwiper :img="img" :index="index + 1" :popupVisible.sync="popupVisible"></popSwiper>
   </div>
 </template>
 
 <script>
-import popSwiper from './popSwiper'
-
 export default {
   name: 'sign',
   data () {
@@ -192,7 +189,6 @@ export default {
     }
   },
   props: ['keyId'],
-  components: { popSwiper },
   computed: {
     commissionMoney () {
       // 佣金类型 1按套 2按比例
@@ -229,11 +225,6 @@ export default {
     },
     goDading () {
       window.location.href = this.acjlWebKehu + '/dadingDetail/' + this.khdata.transactionNumber
-    },
-    show (item, index) {
-      this.img = item
-      this.index = index
-      this.popupVisible = true
     },
     imgClick (index, imgArr) {
       var images = []
