@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Person from './App'
 import router from '@/router/yeji'
-import '@/common/scss/common.scss'
 import '@/plugins/axios.js'
 import '@/plugins/mint.js'
+import '@/common/scss/reset.scss'
+import '@/common/scss/common.scss'
 import VeLine from 'v-charts/lib/line.common'
 
 // 注入axios请求的api地址

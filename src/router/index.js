@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import searchItem from '@/pages/index/views/searchItem.vue'
+import index from '@/pages/index/views/Index'
 
 Vue.use(Router)
 
@@ -12,27 +12,31 @@ export default new Router({
     },
     {
       path: '/index',
-      component: resolve => require(['@/pages/index/views/Index'], resolve)
+      name: 'index',
+      component: index
     },
     {
       path: '/placeUser/:placeUserId/:propertyId',
-      component: resolve => require(['@/pages/index/views/PlaceUser'], resolve)
+      name: 'place-user',
+      component: () => import('@/pages/index/views/PlaceUser')
     },
     {
       path: '/evaluationAllbox/:placeUserId',
-      component: resolve => require(['@/pages/index/views/EvaluationAllbox'], resolve)
+      name: 'evaluation-allbox',
+      component: () => import('@/pages/index/views/EvaluationAllbox')
     },
     {
       path: '/approval',
       name: 'approval',
-      component: resolve => require(['@/pages/index/views/approval'], resolve)
+      component: () => import('@/pages/index/views/approval')
     }, {
       path: '/approval/approvalMsg/:type/:transactionNumber/:id/:reviewState',
       name: 'approvalMsg',
-      component: resolve => require(['@/pages/index/views/approvalMsg'], resolve)
+      component: () => import('@/pages/index/views/approvalMsg')
     }, {
       path: '/searchitem',
-      component: searchItem
+      name: 'searchitem',
+      component: () => import('@/pages/index/views/searchItem.vue')
     }
   ]
 })

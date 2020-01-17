@@ -1,6 +1,6 @@
 <template>
   <div id="index">
-    <mt-header fixed title="首页" class="black">
+    <mt-header fixed title="首页" class="dark">
       <span slot="left" class="shenpi" @click="goShenpi">
         <img src="../../../assets/img/icon_shenpi.png" height="45" width="44"/>
         <em class="s-p-tip">{{unauditedNum}}</em>
@@ -237,10 +237,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import './../../../assets/commen.scss';
-  main{
-    -webkit-overflow-scrolling: touch;
-  }
   .popup {
     width: 100%;
     .pop-action{

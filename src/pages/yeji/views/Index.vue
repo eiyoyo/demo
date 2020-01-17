@@ -1,6 +1,6 @@
 <template>
   <div id="index">
-    <mt-header title="业绩" class="black"></mt-header>
+    <mt-header title="业绩" class="dark" fixed></mt-header>
     <main>
       <section class="section">
         <div class="all-yeji" v-if="dealAll">
@@ -67,7 +67,7 @@
         </div>
       </section>
       <section class="section">
-        <div class="people-yeji">
+        <div class="people-yeji clearfix">
           <p class="h2">员工业绩</p>
           <div class="table-header">
             <table>
@@ -83,7 +83,6 @@
           <div class="table-value">
             <table cellpadding="0" cellspacing="0">
               <tr>
-                <!-- <th style="line-height: 45px;">组员</th> -->
                 <th @click="resetList('reportCount')">
                   <span :class="{'active':active === 'reportCount'}">预约</span>
                   <span v-if="active === 'reportCount'">
@@ -142,9 +141,6 @@
                 </th>
               </tr>
               <tr v-for="(item,index) in achievementList" :key="index">
-                <!-- <td @click="goPlaceUser(item.userId)">
-                  <span>{{item.userName}}</span>
-                </td> -->
                 <td><span>{{item.reportCount}}</span></td>
                 <td><span>{{item.visitCount}}</span></td>
                 <td><span>{{item.dadingSubmitCount}}</span></td>
@@ -182,7 +178,6 @@ export default {
       endTime: '', // 自定义结束时间
       oldActive: 'dealMoney', // 默认大定金额
       sortType: '2',
-
       loading: true,
       dealAll: {},
       childUserList: []// 组员id集合
@@ -371,14 +366,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-.dateSelect{
-  width: 65%;
-  margin-top: -6px;
-  position: absolute;
-  right: 0;
-  top: -6px;
-}
+  .dateSelect{
+    width: 65%;
+    margin-top: -6px;
+    position: absolute;
+    right: 0;
+    top: -6px;
+  }
   .section.time {
     padding: 8px 0;
   }
@@ -524,16 +518,16 @@ export default {
   .people-yeji {
     height: 100%;
     position: relative;
+    background: #f3f3f3;
   }
-.table-header{
-  width: 30%;
-}
-.table-value{
-  width: 70%;
+  .table-header{
+    width: 30%;
+  }
+  .table-value{
+    width: 70%;
     overflow-x: scroll;
-}
-.table-header{
-
+  }
+  .table-header{
     float: left;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
@@ -541,11 +535,11 @@ export default {
     box-sizing: border-box;
     table {
       height: 100%;
-    width: 100%;
+      width: 100%;
       word-break: break-all;
       font-size: 14px;
       line-height: 46px;
-      text-align: center;
+      text-align: left;
       border-collapse: collapse;
       table-layout: fixed;
       tr {
@@ -557,6 +551,7 @@ export default {
         font-weight: bold;
         color: #999;
         padding: 0 8px;
+        text-align: center;
         span.active {
           color: #333;
         }
@@ -566,7 +561,7 @@ export default {
         border-bottom: 1px solid #0076FF;
         text-align: left;
       }
-      tr td{line-height:44px;}
+      tr td{line-height:46px;}
       tr td, tr th {
         border-right: 1px solid #ddd;
         border-bottom: 1px solid #ddd;
@@ -581,11 +576,11 @@ export default {
         padding-left: 18px;
         z-index: 1111;
         width: 80px;
+        overflow-x: scroll;
       }
 
     }
-
-}
+  }
   .table-value {
     float: left;
     border-top: 1px solid #ddd;
@@ -600,7 +595,7 @@ export default {
       text-align: center;
       border-collapse: collapse;
       table-layout: fixed;
-      background: #fff;
+      background: #ffffff;
       tr {
         &:last-child .td {
           border-bottom: none;
@@ -609,7 +604,7 @@ export default {
       tr th {
         font-weight: bold;
         color: #999;
-        padding: 0 8px;
+        padding: 0 10px;
         span.active {
           color: #333;
         }
@@ -635,7 +630,6 @@ export default {
       }
     }
   }
-
   .all-time {
     display: inline-flex;
     justify-content: center;
@@ -657,13 +651,13 @@ export default {
       }
     }
   }
-
   .h2 {
     padding: 0 20px 20px 20px;
     font-size: 16px;
     text-align: left;
     font-weight: bold;
     color: #333333;
+    background-color: #fff;
     border-bottom: 1px solid #f3f3f3;
   }
   .h2_date {

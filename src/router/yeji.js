@@ -1,11 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/pages/yeji/views/Index'
-import PlaceUser from '@/pages/yeji/views/PlaceUser'
-import EvaluationAllbox from '@/pages/yeji/views/EvaluationAllbox'
-
-import List from '@/pages/yeji/views/list'
-import nopayMsg from '@/pages/yeji/views/nopayMsg'
 
 Vue.use(Router)
 
@@ -17,23 +12,28 @@ export default new Router({
     },
     {
       path: '/index',
+      name: 'index',
       component: Index
     },
     {
       path: '/placeUser/:placeUserId/:propertyId',
-      component: PlaceUser
+      name: 'place-user',
+      component: () => import('@/pages/yeji/views/PlaceUser')
     },
     {
       path: '/evaluationAllbox/:placeUserId',
-      component: EvaluationAllbox
+      name: 'evaluation-allbox',
+      component: () => import('@/pages/yeji/views/EvaluationAllbox')
     },
     {
       path: '/list/:type',
-      component: List
+      name: 'list',
+      component: () => import('@/pages/yeji/views/list')
     },
     {
       path: '/list/nopayMsg/:id',
-      component: nopayMsg
+      name: 'hkdetail',
+      component: () => import('@/pages/yeji/views/nopayMsg')
     }
   ]
 })

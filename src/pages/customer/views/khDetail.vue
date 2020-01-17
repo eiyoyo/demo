@@ -1,6 +1,6 @@
 <template>
   <div class="kh-detail">
-    <mt-header title="客户详情" class="white" fixed>
+    <mt-header title="客户详情" fixed>
       <div slot="left">
         <mt-button @click="backHome"><img src="../../../assets/img/btn_back.png" height="18" width="24"/></mt-button>
       </div>
@@ -178,7 +178,7 @@
         <div class="followTop">
           <img src="../../../assets/img/genjin_ic_chat.png" width="16" height="16">
           <span>跟进信息</span>
-          <router-link v-if="totalCount>5" class="seeAll" :to="{path:'/customerFollowbox', query: {customerId: this.$route.params.customerId}}">查看全部{{this.totalCount}}</router-link>
+          <router-link  class="seeAll" :to="{path:'/customerFollowbox', query: {customerId: this.$route.params.customerId}}">查看全部{{this.totalCount}}</router-link>
         </div>
         <ul class="list-ul">
           <li v-for="(item,index) in listData" :key="index">
@@ -782,6 +782,7 @@ export default {
     }
   }
   .outerBox {
+    margin-top: 44px;
     margin-top: 0 !important;
     padding: 20px 0 !important;
   }
@@ -796,7 +797,6 @@ export default {
     color:#FF9B3A;
   }
   .outerBox {
-    margin-top: 44px;
     background-color: #fff;
     padding: 21px 20px 0 20px;
   }
@@ -889,7 +889,6 @@ export default {
 
   // ----- v2.1
   .customer_brief{
-    margin-top: 40px;
     padding: 0 20px;
     background-color: #fff;
     li{

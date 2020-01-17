@@ -1,6 +1,6 @@
 <template>
   <div class="laifang">
-    <mt-header title="回款详情" class="white" fixed>
+    <mt-header title="回款详情" fixed>
       <div slot="left">
         <mt-button @click="$router.back()"><img src="../../../assets/img/btn_back.png" height="18" width="24"/>
         </mt-button>

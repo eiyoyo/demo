@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-    <mt-header fixed title="客户" class="black">
+    <mt-header fixed title="客户" class="dark">
       <span slot="left" @click="goToSearch">
         <img class="sousuo" src="../../../assets/img/topbar_btn_search_white.png" width="44" height="44">
       </span>
@@ -588,55 +588,44 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
   .list {
-    padding-top: 0.1px;
-    margin-top: 44px;
-  }
-
-  .inline-flex {
-    display: inline-flex;
-    align-items: center;
-    font-size: 14px;
-    &:nth-child(2n+1) {
-      width: 110px;
-      overflow: hidden;
-      word-break: keep-all;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    img {
-      margin-right: 7px;
-    }
-  }
-
-  .record {
-    background: #ffffff;
-    padding: 10px 20px;
-    margin-bottom: 4px;
-    margin-top: 16px;
-    color: #FF6A00;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .reset-record {
-      width: 91px;
-      height: 28px;
-      line-height: 26px;
-      text-align: center;
-      font-weight: normal;
-      border-radius: 22px;
-      border: 1px solid #0B79EB;
-      font-size: 12px;
-      color: #0B79EB;
+    /deep/.mint-navbar {
+      background: #ffffff;
+      top: 44px;
+      box-shadow: 0px 5px 4px 0px rgba(70,129,235,0.1);
+      .mint-tab-item {
+        padding: 0 0 1px 0;
+        color:rgba(176,172,172,1);
+        .crew{
+          color: #0076FF;
+          box-shadow: -2px 0px 4px 0px rgba(70,129,235,0.1);
+        }
+        .mint-tab-item-label{
+          font-size: 16px;
+        }
+        span {
+          height: 100%;
+          display: inline-block;
+          padding: 14px 0;
+        }
+        &.is-selected {
+          border-bottom: none;
+          color:rgba(51,51,51,1);
+          font-weight: bold;
+          margin-bottom: 0;
+          span {
+            border-bottom: 2px solid #0076FF;
+          }
+        }
+      }
     }
   }
-
+  .main_body{
+    margin-top: 103px;
+  }
   img {
     vertical-align: middle;
   }
-
   .list-ul{
     margin-bottom: 48px;
     .users_info {
@@ -734,7 +723,6 @@ export default {
       }
     }
   }
-
   .popup {
     width: 100%;
     .pop-action {
@@ -755,7 +743,6 @@ export default {
       }
     }
   }
-
   .list-manager {
     width: 100%;
     max-height: 217px;
@@ -844,18 +831,17 @@ export default {
       display: inline-block;
       width: 16px;
       height: 17px;
+      margin-right: 8px;
       background-image: url('../../../assets/img/client_ic_selected.png');
       background-size: cover;
       position: relative;
-      top: 2px;
+      top: 3px;
     }
   }
-
   .users_info_list{
     display: flex;
     width: 100%;
   }
-
   .users_allot{
     margin: 0;
     min-width: 50px;
@@ -895,10 +881,6 @@ export default {
   .allot_users_btn_c{
     color: #ffffff;
     background:rgba(0,118,255,1);
-  }
-
-  .main_body{
-    padding-top: 100px;
   }
   .userlist_footer {
     width: 100%;
@@ -951,7 +933,7 @@ export default {
       }
     }
   }
-  //
+
   .salesName{
     max-width: 65px;
     height: 23px;

@@ -1,16 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import list from '@/pages/customer/views/list'
-import khDetail from '@/pages/customer/views/khDetail'
-import baobeiDetail from '@/pages/customer/views/baobeiDetail'
-import dadingDetail from '@/pages/customer/views/dadingDetail'
-import laifangDetail from '@/pages/customer/views/laifangDetail'
-import presignDetail from '@/pages/customer/views/presignDetail'
-import signDetail from '@/pages/customer/views/signDetail'
-import sousuoBox from '@/pages/customer/views/sousuoBox'
-import sousuoResult from '@/pages/customer/views/sousuoResult'
-import customerFollowbox from '@/pages/customer/views/customerFollowbox'
-import customerAnalysis from '@/pages/customer/views/customerAnalysis'
 
 Vue.use(Router)
 export default new Router({
@@ -23,42 +13,42 @@ export default new Router({
     {
       path: '/khDetail/:customerId/:userId/:propertyId',
       name: 'kh-detail',
-      component: khDetail
+      component: () => import('@/pages/customer/views/khDetail')
     },
     {
       path: '/customerFollowbox',
       name: 'customer-Followbox',
-      component: customerFollowbox
+      component: () => import('@/pages/customer/views/customerFollowbox')
     },
     {
       path: '/baobeiDetail/:id',
       name: 'baobei-detail',
-      component: baobeiDetail
+      component: () => import('@/pages/customer/views/baobeiDetail')
     },
     {
       path: '/laifangDetail/:id',
       name: 'laifang-detail',
-      component: laifangDetail
+      component: () => import('@/pages/customer/views/laifangDetail')
     },
     {
       path: '/dadingDetail/:id',
       name: 'dading-detail',
-      component: dadingDetail
+      component: () => import('@/pages/customer/views/dadingDetail')
     },
     {
       path: '/presignDetail/:id',
       name: 'presign-detail',
-      component: presignDetail
+      component: () => import('@/pages/customer/views/presignDetail')
     },
     {
       path: '/signDetail/:id',
       name: 'sign-detail',
-      component: signDetail
+      component: () => import('@/pages/customer/views/signDetail')
     },
     {
       path: '/sousuoBox',
       name: 'sousuo-box',
-      component: sousuoBox,
+      component: () => import('@/pages/customer/views/sousuoBox'),
       meta: {
         keepAlive: true
       }
@@ -66,12 +56,12 @@ export default new Router({
     {
       path: '/sousuoBox/sousuoResult',
       name: 'sousuo-result',
-      component: sousuoResult
+      component: () => import('@/pages/customer/views/sousuoResult')
     },
     {
       path: '/customerAnalysis',
       name: 'customer-analysis',
-      component: customerAnalysis
+      component: () => import('@/pages/customer/views/customerAnalysis')
     }
   ]
 })

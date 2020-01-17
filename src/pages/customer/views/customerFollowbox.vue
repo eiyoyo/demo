@@ -16,14 +16,6 @@ export default {
   name: 'customer-Followbox',
   components: {
     customerFollow
-  },
-  data () {
-    return {
-
-    }
   }
 }
 </script>
-<style scoped lang="scss">
-
-</style>

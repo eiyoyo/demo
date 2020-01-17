@@ -131,87 +131,63 @@ export default {
 <style scoped lang="scss">
 
 .van-tabs__nav--card{
-    margin: 0 65px;
+  margin: 0 65px;
 }
 .datePop .van-tabs__wrap{
-    width: 64%;
+  width: 64%;
 }
 .datePop .van-tab{
-    background-color: #F3F3F3;
+  background-color: #F3F3F3;
 }
 .datePop .van-picker__toolbar{
-    display: none;
+  display: none;
 }
 
 /* 折叠面板 */
 
 .infoCollapse .van-cell{
-    line-height: 40px;
-    font-size: 16px;
-    font-family:PingFang-SC-Semibold;
-    font-weight:600;
+  line-height: 40px;
+  font-size: 16px;
+  font-family:PingFang-SC-Semibold;
+  font-weight:600;
 }
 .van-cell__right-icon{
-    line-height: 40px;
+  line-height: 40px;
 }
 .van-collapse-item{
-    margin-top: 0.6rem;
+  margin-top: 0.6rem;
 }
 
-// .tabsWrap{
-//   background-color: #fff;
-//   padding: 8px 65px;
-//   margin: 10px 0;
-// //   width: 100%;
-// }
-// .tabs{
-//   height: 28px;
-//   line-height: 28px;
-//   border: 1px solid #ddd;
-//   display: flex;
-//   span{
-//     flex: 1;
-//     border-right: 1px solid  #ddd;
-//     font-size: 0.6rem;
-//     color: #ddd;
-//     text-align: center;
-//   }
-//   span:last-child{
-//     border: 0;
-//   }
-// }
 .tabsWrap{
     height: 44px;
     background-color: #fff;
-    // margin-bottom: 16px;
     display: flex;
     justify-content: center;
-
-    .tabs {
-      margin: auto;
+  .tabs {
+    margin: auto;
+    height: 28px;
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid #dddddd;
+    display: inline-flex;
+    span {
+      width: 54px;
       height: 28px;
-      background: #fff;
-      border-radius: 2px;
-      border: 1px solid #dddddd;
-      display: inline-flex;
-      span {
-        width: 54px;
-        height: 28px;
-        line-height: 28px;
-        text-align: center;
-        font-size:16px;
-        font-family:PingFang-SC-Regular;
-        font-weight:400;
-        color:rgba(221,221,221,1);
-        &.active {
-          color: #0076FF;
-        }
-        &:not(:last-child) {
-          border-right: 1px solid #dddddd;
-        }
+      line-height: 28px;
+      text-align: center;
+      font-size:16px;
+      font-family:PingFang-SC-Regular;
+      font-weight:400;
+      color:rgba(221,221,221,1);
+      &.active {
+        color: #0076FF;
+      }
+      &:not(:last-child) {
+        border-right: 1px solid #dddddd;
       }
     }
   }
+}
 
 .okDate{
   width: 36%;

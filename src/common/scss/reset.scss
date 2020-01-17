@@ -1,11 +1,16 @@
-* {
+*{
   margin: 0;
   padding: 0;
 }
 body{
+  height: 100vh;
+  color: $theme-font-color;
+  overflow: hidden;
+  font-size: 16px;
   user-select:none;
-  background-color: #f3f3f3;
-  font-family: "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+  background-color: $theme-background;
+  font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif, "Microsoft YaHei", "WenQuanYi Micro Hei";
+  -webkit-font-smoothing: antialiased;
 }
 /* 清除输入框内阴影 */
 input,select,textarea {
@@ -37,27 +42,14 @@ ol,ul {
   list-style: none;
   padding-left: 0;
 }
-
-.black.mint-header {
-  background: #494C5B;
-  line-height: 44px;
-  .mint-header-title {
-    font-size: 17px;
-    font-weight: bold;
-    overflow: auto;
-  }
-  &.fixed{
-    z-index: 5;
-  }
-}
-
-.white.mint-header {
+// 全局重置mint-ui的默认样式
+.mint-header {
   height: 44px;
-  line-height: 44px;
-  background: #fff;
+  background: $theme-header-white;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
   .mint-header-title {
     font-size: 17px;
+    line-height: 44px;
     font-weight: bold;
     color: #333;
     overflow: auto;
@@ -66,16 +58,14 @@ ol,ul {
     z-index: 5;
   }
 }
-
 .mint-header ~ main {
   margin-top: 45px;
 }
-
-.section {
-  padding: 20px 0;
-  margin-bottom: 16px;
-  background: #ffffff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+.dark.mint-header {
+  background: $theme-header-dark;
+  .mint-header-title {
+    color: #fff;
+  }
 }
 .mint-toast{
   z-index: 2100;

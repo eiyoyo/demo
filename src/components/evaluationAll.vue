@@ -82,7 +82,6 @@ export default {
 </script>
 <style scoped lang="scss">
   .outerBox {
-    //margin-top: 44px;
     background-color: #fff;
     padding: 21px 20px 0 20px;
   }

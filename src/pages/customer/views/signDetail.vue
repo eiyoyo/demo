@@ -1,6 +1,6 @@
 <template>
   <div class="baobei">
-    <mt-header title="正签详情" class="white" fixed>
+    <mt-header title="正签详情" fixed>
       <div slot="left">
         <mt-button @click="back()"><img src="../../../assets/img/btn_back.png" height="18" width="24"/>
         </mt-button>

@@ -1,9 +1,7 @@
 <template>
   <div class="searching">
     <mt-header title="检索" style="position: fixed;width:100%;z-index:999;" class="m_header">
-      <mt-button slot="left" @click="$router.back()">
-        <img src="./../../../assets/img/topbar_btn_back@2x.png" alt="" width="44" height="44" style="margin-left:10px;">
-      </mt-button>
+      <img slot="left" @click="$router.back()" src="./../../../assets/img/topbar_btn_back@2x.png" alt="" width="44" height="44" style="margin-left:10px;">
     </mt-header>
     <section class="search_body">
       <input type="text" placeholder="提交人员(案场/联动)" v-model="submitPersonnel" @focus="fixed()">
@@ -154,8 +152,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import './../../../assets/commen.scss';
-
   .searching {
     background-color: #F3F3F3;
     height: 100vh;

@@ -307,9 +307,6 @@ export default {
     align-items: center;
     justify-content: space-between;
   }
-  .list-ul > div:nth-child(1) {
-    margin-top: 44px;
-  }
   .list-ul li {
     height: 82px;
     background: rgba(255, 255, 255, 1);

@@ -3,7 +3,8 @@ import Custormer from './App'
 import router from '@/router/customer'
 import '@/plugins/axios.js'
 import '@/plugins/mint.js'
-import './../../assets/list.scss'
+import '@/common/scss/reset.scss'
+import '@/common/scss/common.scss'
 
 // 注入axios请求的api地址
 import { customerHandle } from '@/common/js/apiRegister.js'

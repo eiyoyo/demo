@@ -130,7 +130,7 @@ export default {
   },
 
   created () {
-    // this.loadMore();
+    this.loadMore()
   }
 }
 </script>
@@ -145,7 +145,6 @@ export default {
     color:#FF9B3A;
   }
   .outerBox {
-    margin-top: 44px;
     background-color: #fff;
     padding: 21px 20px 1px 20px;
   }

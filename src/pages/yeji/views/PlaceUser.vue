@@ -602,25 +602,6 @@ export default {
       }
     }
   }
-
-  // .gray-star{
-  //   width: 16px;
-  //   height: 15px;
-  //   display: inline-block;
-  //   background: url('../../../assets/img/yeji_ic_star_grey.png')
-  // }
-  // .yellow-star{
-  //   width: 16px;
-  //   height: 15px;
-  //   display: inline-block;
-  //   background: url('../../../assets/img/yeji_ic_star_yellow.png')
-  // }
-  // .half-star{
-  //   width: 16px;
-  //   height: 15px;
-  //   display: inline-block;
-  //   background: url('../../../assets/img/yeji_ic_star_half.png')
-  // }
   .outerBox {
     margin: 17px 0 0 0 !important;
     padding: 0 !important;

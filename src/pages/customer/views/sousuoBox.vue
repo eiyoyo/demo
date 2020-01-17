@@ -109,9 +109,6 @@ export default {
   input:valid + img {
     display: block;
   }
-  .search .khName {
-    margin-top: 44px;
-  }
   button {
     flex: 8;
     height: 40px;
